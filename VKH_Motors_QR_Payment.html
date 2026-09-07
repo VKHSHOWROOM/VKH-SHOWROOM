@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VKH Motors | Luxury Automobile Showroom</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+/* =====================================================
+   GLOBAL
+===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Inter", sans-serif;
+    background: #050505;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+a {
+}
+    text-decoration: none;
+    color: inherit;
+button,
+input {
+    font-family: inherit;
+}
+::selection {
+    background: #e50936;
+    color: white;
+}
+/* =====================================================
+   LOGIN PAGE
+===================================================== */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    position: relative;
+    background:
+        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.92)),
+        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=90")
+        center / cover no-repeat;
+}
+.login-container::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(229,9,54,.22);
+    filter: blur(130px);
+    border-radius: 50%;
+    top: -200px;
+    right: -150px;
+}
+.login-box {
+    width: 100%;
+    max-width: 460px;
+    padding: 45px;
+    position: relative;
+    z-index: 2;
+    background: rgba(15,15,15,.82);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 25px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 30px 100px rgba(0,0,0,.7);
+    animation: loginAnimation .8s ease;
+}
+@keyframes loginAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(.96);
+    }
+}
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+.brand-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ff1744, #8b001e);
+    font-size: 30px;
+    box-shadow: 0 15px 35px rgba(229,9,54,.3);
+}
+.login-box h1 {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+.login-box .subtitle {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+.input-group {
+    position: relative;
+    margin-bottom: 18px;
+}
+.input-group i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    transition: .3s;
+}
+.input-group input {
+    width: 100%;
+    padding: 16px 18px 16px 50px;
+    background: #0b0b0b;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    outline: none;
+    color: white;
+    font-size: 14px;
+    transition: .3s;
+}
+.input-group input::placeholder {
+    color: #666;
+}
+.input-group input:focus {
+    border-color: #e50936;
+    box-shadow: 0 0 0 4px rgba(229,9,54,.1);
+}
+.login-btn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    background: linear-gradient(135deg, #ff1744, #a90025);
+    box-shadow: 0 15px 30px rgba(229,9,54,.25);
+    transition: .3s;
+}
+.login-btn:hover {
+    transform: translateY(-3px);
+}
+/* =====================================================
+   MAIN WEBSITE
+===================================================== */
+.main-website {
+    display: none;
+    min-height: 100vh;
+    background: #050505;
+}
+/* =====================================================
+   HEADER
+===================================================== */
+header {
+    height: 78px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+    background: rgba(5,5,5,.86);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    backdrop-filter: blur(20px);
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-symbol {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff1744, #87001e);
+    font-size: 18px;
+}
+.logo h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+}
+.logo h2 span {
+    color: #ff1744;
+}
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+nav a {
+    font-size: 13px;
+    font-weight: 600;
+    color: #aaa;
+    transition: .3s;
+}
+nav a:hover {
+    color: white;
+}
+.logout-btn {
+    padding: 10px 17px;
+    border: 1px solid #333;
+    background: transparent;
+    color: white;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: .3s;
+}
+.logout-btn:hover {
+    background: #e50936;
+    border-color: #e50936;
+}
+/* =====================================================
+   HERO
+===================================================== */
+.hero {
+    min-height: calc(100vh - 78px);
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    position: relative;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.78) 42%, rgba(0,0,0,.15) 100%),
+        url("https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=2200&q=90")
+        center / cover no-repeat;
+}
+.hero-content {
+    max-width: 720px;
+    animation: heroAnimation 1s ease;
+}
+@keyframes heroAnimation {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    background: rgba(229,9,54,.1);
+    border: 1px solid rgba(229,9,54,.3);
+    color: #ff496a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 7vw, 90px);
+    line-height: 1.02;
+    margin-bottom: 25px;
+}
+.hero h1 span {
+    color: #ff1744;
+}
+.hero p {
+    max-width: 600px;
+    color: #bdbdbd;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.primary-btn,
+.secondary-btn {
+    padding: 15px 28px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: .3s;
+}
+.primary-btn {
+    background: linear-gradient(135deg, #ff1744, #a90025);
+    color: white;
+}
+.primary-btn:hover {
+    transform: translateY(-3px);
+}
+.secondary-btn {
+    border: 1px solid #444;
+    color: white;
+}
+.secondary-btn:hover {
+    background: white;
+    color: black;
+}
+/* =====================================================
+   STATS / SECTIONS
+===================================================== */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #252525;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+.stat {
+    padding: 30px;
+    text-align: center;
+    background: #090909;
+}
+.stat h3 {
+    font-size: 28px;
+    color: #ff1744;
+    margin-bottom: 5px;
+}
+.stat p {
+    color: #777;
+    font-size: 12px;
+}
+.section {
+    padding: 110px 7%;
+}
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-label {
+    color: #ff1744;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.section-header h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+    margin: 12px 0 15px;
+}
+.section-header p {
+    max-width: 650px;
+}
+    margin: auto;
+    color: #888;
+    font-size: 15px;
+/* =====================================================
+   ABOUT
+===================================================== */
+.about {
+    background: #090909;
+}
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+.about-image {
+    height: 480px;
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+}
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+.about-image:hover img {
+    transform: scale(1.05);
+}
+.about-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,.55));
+}
+.about-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+.about-content p {
+    color: #999;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+.feature {
+    padding: 17px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 10px;
+}
+.feature i {
+    color: #ff1744;
+    margin-right: 8px;
+}
+/* =====================================================
+   CARS
+===================================================== */
+.cars-section {
+    background: #050505;
+}
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+.car-card {
+    background: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: .4s;
+    position: relative;
+}
+.car-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(229,9,54,.55);
+    box-shadow: 0 25px 60px rgba(0,0,0,.55);
+}
+.car-image {
+    height: 260px;
+    overflow: hidden;
+    position: relative;
+}
+.car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .6s;
+}
+.car-card:hover .car-image img {
+    transform: scale(1.08);
+}
+.car-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 7px 12px;
+    border-radius: 30px;
+    background: #ff1744;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.car-details {
+    padding: 25px;
+}
+.car-details small {
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 10px;
+}
+.car-details h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 26px;
+    margin: 6px 0 10px;
+}
+.car-specs {
+    display: flex;
+    gap: 15px;
+    color: #777;
+    font-size: 11px;
+    margin-bottom: 20px;
+}
+.car-specs i {
+    color: #ff1744;
+    margin-right: 4px;
+}
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price {
+    color: #ff1744;
+    font-size: 19px;
+    font-weight: 800;
+}
+.buy-btn {
+    padding: 11px 17px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: #111;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .3s;
+}
+.buy-btn:hover {
+    background: #ff1744;
+    color: white;
+}
+/* =====================================================
+   CONTACT / PAYMENT / FOOTER
+===================================================== */
+.contact {
+    background: #090909;
+}
+.contact-box {
+    max-width: 900px;
+    margin: auto;
+    padding: 50px;
+    text-align: center;
+    border: 1px solid #252525;
+    border-radius: 25px;
+    background: #0d0d0d;
+}
+.contact-box h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+.contact-box p {
+    color: #888;
+    margin-bottom: 30px;
+}
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.contact-item {
+    color: #aaa;
+    font-size: 14px;
+}
+.contact-item i {
+    color: #ff1744;
+    margin-right: 7px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0,0,0,.85);
+    backdrop-filter: blur(12px);
+}
+.modal-content {
+    width: 100%;
+    max-width: 500px;
+    padding: 35px;
+    position: relative;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 22px;
+}
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: #777;
+    cursor: pointer;
+}
+.close:hover {
+    color: #ff1744;
+}
+.modal-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+.car-summary {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: #191919;
+    border: 1px solid #292929;
+    color: #ff1744;
+    font-weight: 700;
+}
+.payment-title {
+    color: #aaa;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #ccc;
+}
+.payment-option:hover {
+    border-color: #ff1744;
+}
+.payment-option input {
+    accent-color: #ff1744;
+}
+.payment-option i {
+    width: 20px;
+    color: #ff1744;
+}
+.pay-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff1744, #a90025);
+    color: white;
+    font-weight: 800;
+}
+    cursor: pointer;
+.payment-status {
+    display: none;
+    text-align: center;
+    padding: 30px 10px;
+}
+.payment-status i {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+.payment-status h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.payment-status p {
+    color: #888;
+    font-size: 13px;
+}
+.success i {
+    color: #22c55e;
+}
+.failed i {
+    color: #ef4444;
+}
+footer {
+    padding: 30px 7%;
+    background: #030303;
+    border-top: 1px solid #202020;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+footer p {
+    color: #666;
+    font-size: 12px;
+}
+.socials {
+    display: flex;
+    gap: 10px;
+}
+.socials a {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #292929;
+    border-radius: 50%;
+    color: #888;
+}
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media(max-width:1000px) {
+    .car-grid { grid-template-columns: repeat(2,1fr); }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-image { height: 400px; }
+    .stats { grid-template-columns: repeat(2,1fr); }
+}
+@media(max-width:700px) {
+    header {
+        height: auto;
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero {
+        min-height: 80vh;
+        padding: 60px 7%;
+    }
+    .hero h1 { font-size: 48px; }
+    .section { padding: 75px 6%; }
+    .section-header h2 { font-size: 35px; }
+    .car-grid { grid-template-columns: 1fr; }
+    .feature-list { grid-template-columns: 1fr; }
+    .contact-box { padding: 35px 20px; }
+    footer {
+        justify-content: center;
+        text-align: center;
+}
+    }
+@media(max-width:450px) {
+    .login-box { padding: 32px 22px; }
+    .hero h1 { font-size: 40px; }
+    .hero-buttons {
+        flex-direction: column;
+    }
+    .primary-btn,
+    .secondary-btn {
+        text-align: center;
+        width: 100%;
+    }
+    .stats { grid-template-columns: 1fr; }
+    .price-row {
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
+    }
+    .buy-btn { width: 100%; }
+}
+</style>
+</head>
+<body>
+<!-- LOGIN -->
+<div id="loginSection" class="login-container">
+    <div class="login-box">
+        <div class="brand-icon">
+            <i class="fa-solid fa-car-side"></i>
+        </div>
+        <h1>VKH Motors</h1>
+        <p class="subtitle">Enter the world of luxury & performance</p>
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="tel" id="phoneNumber"
+                       placeholder="Phone Number"
+                       pattern="[0-9]{10}" required>
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="input-group">
+                <input type="email" id="gmail"
+                       placeholder="Email Address" required>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password"
+                       placeholder="Password" minlength="4" required>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <button class="login-btn" type="submit">
+                Login to Showroom
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </form>
+    </div>
+</div>
+<!-- MAIN WEBSITE -->
+<div id="mainWebsite" class="main-website">
+<header>
+    <div class="logo">
+        <div class="logo-symbol">
+            <i class="fa-solid fa-car"></i>
+        </div>
+        <h2>VKH <span>Motors</span></h2>
+    </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#cars">Cars</a>
+        <a href="#contact">Contact</a>
+        <button class="logout-btn" onclick="handleLogout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </button>
+    </nav>
+</header>
+<section id="home" class="hero">
+    <div class="hero-content">
+        <div class="hero-tag">
+            <i class="fa-solid fa-crown"></i>
+            Premium Automobile Experience
+        </div>
+        <h1>Drive Beyond <span>Limits.</span></h1>
+        <p>
+            Discover a world of extraordinary automobiles engineered
+            for those who demand performance, elegance and
+            uncompromising luxury.
+        </p>
+        <div class="hero-buttons">
+            <a href="#cars" class="primary-btn">
+                Explore Collection
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#about" class="secondary-btn">Discover VKH</a>
+        </div>
+    </div>
+</section>
+<section class="stats">
+    <div class="stat"><h3>50+</h3><p>Premium Vehicles</p></div>
+    <div class="stat"><h3>10+</h3><p>Luxury Brands</p></div>
+    <div class="stat"><h3>5K+</h3><p>Happy Customers</p></div>
+    <div class="stat"><h3>10</h3><p>Years Experience</p></div>
+</section>
+<section id="about" class="section about">
+    <div class="section-header">
+        <div class="section-label">Who We Are</div>
+        <h2>More Than A Showroom</h2>
+        <p>We create automotive experiences for people who appreciate extraordinary machines.</p>
+    </div>
+    <div class="about-grid">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=90"
+                 alt="Luxury Car">
+        </div>
+        <div class="about-content">
+            <h2>Welcome to VKH Motors</h2>
+            <p>
+            </p>
+            <p>
+                VKH Motors is a premium automobile showroom dedicated
+                to bringing together some of the world's most desirable
+                performance and luxury vehicles.
+                From breathtaking design to thrilling performance,
+                every vehicle in our collection is selected to deliver
+                an unforgettable driving experience.
+            </p>
+            <div class="feature-list">
+                <div class="feature"><i class="fa-solid fa-shield-halved"></i>Trusted Service</div>
+                <div class="feature"><i class="fa-solid fa-gem"></i>Premium Cars</div>
+                <div class="feature"><i class="fa-solid fa-gauge-high"></i>High Performance</div>
+                <div class="feature"><i class="fa-solid fa-headset"></i>24/7 Support</div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- CARS: luxury, SUVs and small/normal cars -->
+<section id="cars" class="section cars-section">
+    <div class="section-header">
+        <div class="section-label">Our Collection</div>
+        <h2>Featured Automobiles</h2>
+        <p>
+            Explore luxury cars, premium SUVs, family cars,
+            compact cars and performance vehicles.
+        </p>
+    </div>
+    <div class="car-grid">
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=90"
+                     alt="Luxury Grand Tourer">
+                <div class="car-badge">Featured</div>
+            </div>
+            <div class="car-details">
+                <small>Grand Touring</small>
+                <h3>VKH Phantom GT</h3>
+                <div class="car-specs">
+                    <span><i class="fa-solid fa-gauge-high"></i>305 km/h</span>
+                    <span><i class="fa-solid fa-bolt"></i>600 HP</span>
+                </div>
+                <div class="price-row">
+                    <div class="price">₹ 2,45,00,000</div>
+                    <button class="buy-btn"
+                            onclick="openPayment('VKH Phantom GT','2,45,00,000')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=90"
+                     alt="Sports Coupe">
+                <div class="car-badge">Performance</div>
+            </div>
+            <div class="car-details">
+                <small>Sports Coupe</small>
+                <h3>VKH Sportster X</h3>
+                <div class="car-specs">
+                    <span><i class="fa-solid fa-gauge-high"></i>320 km/h</span>
+                    <span><i class="fa-solid fa-bolt"></i>650 HP</span>
+                </div>
+                <div class="price-row">
+                    <div class="price">₹ 1,85,00,000</div>
+                    <button class="buy-btn"
+                            onclick="openPayment('VKH Sportster X','1,85,00,000')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=90"
+                     alt="Luxury SUV">
+                <div class="car-badge">Luxury SUV</div>
+            </div>
+            <div class="car-details">
+                <small>Premium SUV</small>
+                <h3>VKH Titan SUV</h3>
+                <div class="car-specs">
+                    <span><i class="fa-solid fa-gauge-high"></i>250 km/h</span>
+                    <span><i class="fa-solid fa-bolt"></i>550 HP</span>
+                </div>
+                <div class="price-row">
+                    <div class="price">₹ 3,10,00,000</div>
+                    <button class="buy-btn"
+                            onclick="openPayment('VKH Titan SUV','3,10,00,000')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <!-- NORMAL / SUV -->
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=90"
+                     alt="Toyota Fortuner style SUV">
+                <div class="car-badge">SUV</div>
+            </div>
+            <div class="car-details">
+                <small>Family SUV</small>
+                <h3>Toyota Fortuner</h3>
+                <div class="car-specs">
+                    <span><i class="fa-solid fa-gauge-high"></i>180 km/h</span>
+                    <span><i class="fa-solid fa-road"></i>4x4</span>
+                </div>
+                <div class="price-row">
+                    <div class="price">₹ 35,00,000</div>
+                    <button class="buy-btn"
+                            onclick="openPayment('Toyota Fortuner','35,00,000')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <!-- RANGE ROVER -->
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1000&q=90"
+                     alt="Range Rover style luxury SUV">
+                <div class="car-badge">Luxury</div>
+            </div>
+            <div class="car-details">
+                <small>Luxury SUV</small>
+                <h3>Range Rover</h3>
+                <div class="car-specs">
+                    <span><i class="fa-solid fa-gauge-high"></i>225 km/h</span>
+                    <span><i class="fa-solid fa-bolt"></i>400 HP</span>
+                </div>
+                <div class="price-row">
+                    <div class="price">₹ 2,40,00,000</div>
+                    <button class="buy-btn"
+                            onclick="openPayment('Range Rover','2,40,00,000')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <!-- SMALL CAR -->
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=1000&q=90"
+                     alt="Compact car">
+                <div class="car-badge">Compact</div>
+            </div>
+            <div class="car-details">
+                <small>City Car</small>
+                <h3>VKH City Mini</h3>
+                <div class="car-specs">
+                    <span><i class="fa-solid fa-gauge-high"></i>160 km/h</span>
+                    <span><i class="fa-solid fa-gas-pump"></i>Petrol</span>
+                </div>
+                <div class="price-row">
+                    <div class="price">₹ 8,50,000</div>
+                    <button class="buy-btn"
+                            onclick="openPayment('VKH City Mini','8,50,000')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <!-- HATCHBACK -->
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=1000&q=90"
+                     alt="Hatchback">
+                <div class="car-badge">Popular</div>
+            </div>
+            <div class="car-details">
+                <small>Hatchback</small>
+                <h3>VKH Urban Hatch</h3>
+                <div class="car-specs">
+                    <span><i class="fa-solid fa-gauge-high"></i>170 km/h</span>
+                    <span><i class="fa-solid fa-gas-pump"></i>Petrol</span>
+                </div>
+                <div class="price-row">
+                    <div class="price">₹ 10,50,000</div>
+                    <button class="buy-btn"
+                            onclick="openPayment('VKH Urban Hatch','10,50,000')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <!-- SEDAN -->
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=90"
+                     alt="Premium sedan">
+                <div class="car-badge">Sedan</div>
+            </div>
+            <div class="car-details">
+                <small>Premium Sedan</small>
+                <h3>VKH Executive Sedan</h3>
+                <div class="car-specs">
+                    <span><i class="fa-solid fa-gauge-high"></i>210 km/h</span>
+                    <span><i class="fa-solid fa-bolt"></i>250 HP</span>
+                </div>
+                <div class="price-row">
+                    <div class="price">₹ 22,50,000</div>
+                    <button class="buy-btn"
+                            onclick="openPayment('VKH Executive Sedan','22,50,000')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        <!-- ELECTRIC -->
+        <div class="car-card">
+            <div class="car-image">
+                <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1000&q=90"
+                     alt="Electric car">
+                <div class="car-badge">Electric</div>
+            </div>
+            <div class="car-details">
+                <small>Electric</small>
+                <h3>VKH E-Drive</h3>
+                <div class="car-specs">
+                    <span><i class="fa-solid fa-gauge-high"></i>200 km/h</span>
+                    <span><i class="fa-solid fa-bolt"></i>300 HP</span>
+                </div>
+                <div class="price-row">
+                    <div class="price">₹ 28,00,000</div>
+                    <button class="buy-btn"
+                            onclick="openPayment('VKH E-Drive','28,00,000')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact" class="section contact">
+    <div class="contact-box">
+        <div class="section-label">Get In Touch</div>
+        <h2>Ready To Find Your Dream Car?</h2>
+        <p>Our automobile specialists are ready to help you find the perfect vehicle.</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fa-solid fa-phone"></i> +91 93460 12578
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i> krsnaradha14318@gmail.com
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-location-dot"></i> ISNAPUR, SANGA REDDY
+            </div>
+        </div>
+    </div>
+</section>
+<!-- PAYMENT MODAL -->
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closePayment()">&times;</span>
+        <h2>Complete Purchase</h2>
+        <div id="carSummary" class="car-summary"></div>
+        <form id="paymentForm">
+            <div class="payment-title">Select Payment Method</div>
+            <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="UPI" required
+                       onchange="showQRPayment()">
+                <i class="fa-solid fa-qrcode"></i>
+                UPI / QR Code <span>PhonePe / GPay / Paytm</span>
+            </label>
+            <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="Debit Card"
+                       onchange="hideQRPayment()">
+                <i class="fa-solid fa-credit-card"></i>
+                Debit Card
+            </label>
+            <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="Credit Card"
+                       onchange="hideQRPayment()">
+                <i class="fa-solid fa-credit-card"></i>
+                Credit Card
+            </label>
+
+            <div id="qrPayment" class="qr-payment">
+                <h3>Scan & Pay</h3>
+                <p>Scan this QR code using Google Pay, PhonePe or Paytm</p>
+                <img
+                    id="qrCodeImage"
+                    class="qr-code"
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi%3A%2F%2Fpay%3Fpa%3Dvkhmotors%40upi%26pn%3DVKH%2520Motors"
+                    alt="VKH Motors UPI QR Code">
+                <div class="qr-note">
+                    UPI ID: <strong>vkhmotors@upi</strong><br>
+                    Amount will be entered in your UPI app.
+                </div>
+                <button type="button" class="qr-confirm-btn"
+                        onclick="confirmQRPayment()">
+                    <i class="fa-solid fa-circle-check"></i>
+                    I Have Completed Payment
+                </button>
+            </div>
+
+            <button id="securePayBtn" type="submit" class="pay-btn">
+                <i class="fa-solid fa-lock"></i> Pay Securely
+            </button>
+        </form>
+        <div id="paymentStatus" class="payment-status"></div>
+    </div>
+</div>
+<footer>
+    <p>© 2026 VKH Motors. All Rights Reserved By BR.</p>
+    <div class="socials">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+</footer>
+</div>
+<script>
+/* =========================
+   LOGIN
+========================= */
+const loginForm = document.getElementById("loginForm");
+loginForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const phone = document.getElementById("phoneNumber").value;
+    const email = document.getElementById("gmail").value;
+    const password = document.getElementById("password").value;
+    if (phone && email && password) {
+        document.getElementById("loginSection").style.display = "none";
+        document.getElementById("mainWebsite").style.display = "block";
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+});
+/* =========================
+   LOGOUT
+========================= */
+function handleLogout() {
+    document.getElementById("mainWebsite").style.display = "none";
+    document.getElementById("loginSection").style.display = "flex";
+    document.getElementById("loginForm").reset();
+}
+/* =========================
+   PAYMENT
+========================= */
+let selectedCarName = "";
+let selectedCarPrice = "";
+function openPayment(carName, carPrice) {
+    selectedCarName = carName;
+    selectedCarPrice = carPrice;
+    document.getElementById("carSummary").innerHTML =
+        `<i class="fa-solid fa-car"></i>
+         ${carName}
+         <br>
+         <span style="color:#aaa;font-size:13px;">
+         Total Price: n ${carPrice}
+         </span>`;
+    document.getElementById("paymentModal").style.display = "flex";
+    document.getElementById("paymentForm").style.display = "block";
+    document.getElementById("paymentStatus").style.display = "none";
+    document.getElementById("paymentForm").reset();
+    hideQRPayment();
+}
+function closePayment() {
+    document.getElementById("paymentModal").style.display = "none";
+}
+/* =========================
+   QR PAYMENT
+========================= */
+function showQRPayment() {
+    document.getElementById("qrPayment").style.display = "block";
+    document.getElementById("securePayBtn").style.display = "none";
+}
+
+function hideQRPayment() {
+    const qr = document.getElementById("qrPayment");
+    const btn = document.getElementById("securePayBtn");
+    if (qr) qr.style.display = "none";
+    if (btn) btn.style.display = "block";
+}
+
+function confirmQRPayment() {
+    const status = document.getElementById("paymentStatus");
+    document.getElementById("paymentForm").style.display = "none";
+    status.style.display = "block";
+    status.className = "payment-status success";
+    status.innerHTML = `
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>Payment Submitted!</h3>
+        <p>
+            Your QR/UPI payment for
+            <strong>${selectedCarName}</strong>
+            has been submitted.
+            <br><br>
+            Amount: ₹${selectedCarPrice}
+            <br><br>
+            Our executive will verify the payment and contact you shortly.
+        </p>
+    `;
+}
+
+/* =========================
+   PROCESS PAYMENT
+========================= */
+document.getElementById("paymentForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const selectedMethod =
+        document.querySelector('input[name="paymentMethod"]:checked').value;
+    document.getElementById("paymentForm").style.display = "none";
+    const status = document.getElementById("paymentStatus");
+    status.style.display = "block";
+    const success = Math.random() < 0.9;
+    if (success) {
+        status.className = "payment-status success";
+        status.innerHTML = `
+            <i class="fa-solid fa-circle-check"></i>
+            <h3>Payment Successful!</h3>
+            <p>
+                Your booking for
+                <strong>${selectedCarName}</strong>
+                has been confirmed.
+                <br><br>
+                Payment Method: ${selectedMethod}
+                <br><br>
+                Our executive will contact you shortly.
+            </p>
+        `;
+    } else {
+        status.className = "payment-status failed";
+        status.innerHTML = `
+            <i class="fa-solid fa-circle-xmark"></i>
+            <h3>Payment Failed</h3>
+            <p>
+                The transaction could not be completed.
+                <br><br>
+                Please try again.
+            </p>
+            <br>
+            <button onclick="retryPayment()" class="pay-btn">
+                Try Again
+            </button>
+        `;
+    }
+});
+function retryPayment() {
+    document.getElementById("paymentStatus").style.display = "none";
+    document.getElementById("paymentForm").style.display = "block";
+}
+document.getElementById("paymentModal").addEventListener("click", function(event) {
+    if (event.target === this) {
+        closePayment();
+    }
+});
+</script>
+</body>
+</html>
